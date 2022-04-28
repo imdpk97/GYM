@@ -1,0 +1,79 @@
+<div class="container-fluid">
+    <div class="row my-3">
+        <div class="card col-md-12">
+            <form [formGroup]="updateDetails" (ngSubmit)="[updateData(updateDetails.value),closeMe()]">
+  
+                <div class="card-body text-center">
+                    <mat-card-header>
+                        <mat-card-title>
+                            <h3>Update Activity</h3>
+                        </mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content class="row">
+                        <div class="col-md-4">
+                            <mat-form-field>
+                                <input type="hidden"  [(ngModel)]="row.id" value="{{row.id}}" formControlName="id">
+                                <mat-label>Day</mat-label>
+                                <input matInput type="text"  value="{{row.day}}"  [(ngModel)]="row.day" formControlName="day"/>
+                                <mat-error>day is required</mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-4">
+                            <mat-form-field>
+                                <mat-label>Workout</mat-label>
+                                <input matInput type="text" value="{{row.workout}}"  [(ngModel)]="row.workout" formControlName="workout" >
+                                <mat-error>workout is required</mat-error>
+                            </mat-form-field>
+                        </div>
+                      
+                    </mat-card-content>
+                    <div class="col-12 my-2">
+                        <button type="submit" class="btn btn-success">Update</button>
+  
+                        <button mat-dialog-close tabindex="-1" class="btn btn-danger">Cancel</button>
+  
+  
+                    </div>
+  
+                </div>
+            </form>
+        </div>
+  
+    </div>
+  
+  </div>
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    

@@ -1,0 +1,62 @@
+
+<div>
+    <form [formGroup]="inputs">
+        <mat-card-header>Diet Details
+      </mat-card-header>
+      <mat-card-content>
+        <div>
+          <mat-form-field>
+            <mat-label>Height</mat-label>
+            <input matInput type="text" [(ngModel)]="user.height" formControlName="height"/>
+            <mat-error >height is required </mat-error>
+          </mat-form-field>
+        </div>
+        
+        <div>
+          <mat-form-field>
+            <mat-label>Weight</mat-label>
+            <input matInput type="text" [(ngModel)]="user.weight" formControlName="weight"/>
+            <mat-error >weight is required</mat-error>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field>
+            <mat-label>Age</mat-label>
+            <input matInput type="age" [(ngModel)]="user.age" formControlName="age"/>
+            <mat-error >age is required</mat-error>
+          </mat-form-field>
+        </div>
+         </mat-card-content>
+      <button type="submit"  (click)="calculateBmi(inputs.value)">Add</button>
+    </form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  

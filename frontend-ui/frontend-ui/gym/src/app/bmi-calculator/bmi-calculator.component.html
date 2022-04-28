@@ -1,0 +1,70 @@
+<div class="container">
+  <div class="row">
+      <div class="card">
+          <div class="card-body">
+              <div class="card-title">
+                  <h2>BMI Calculator</h2>
+              </div>
+              <mat-card-content class="row">
+                  <div class="col-md-6">
+                      <!-- <div class="form-group">
+                          <label for="age">Age (between 2-100) </label>
+                          <input type="number" #age class="form-control">
+                      </div> -->
+                      <div class="form-group">
+                          <label for="age">Height (in cm) </label>
+                          <input type="number" #height class="form-control">
+                      </div>
+                      <div class="form-group">
+                          <label for="age">Weight (in KG) </label>
+                          <input type="number" #weight class="form-control">
+                      </div>
+                      <div class="col-12 my-2">
+                          <button type="button" (click)="calculateBMI(weight.value,height.value)" class="btn btn-success">Calculate</button>
+                      </div>
+                      <div class="col-12">
+                          <div class="row">
+                              <div class="col-md-6">
+                                  <h2>
+                                      <span class="badge bg-info">Your BMI :</span> {{bmi}} kg/m<sup>2</sup>
+                                  </h2>
+                              </div>
+
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-md-6 m-auto">
+                      <div class="row">
+                        <p>For age 10 to 100 the BMI report are :</p>
+                      </div>
+                      <div class="row">
+                        <h3>
+                            <span class="badge bg-secondary mr-3"> Underweight : </span> &nbsp;&nbsp; Less than 18
+                        </h3>
+                      </div>
+                     
+                      <div class="row">
+                        <h3>
+                            <span class="badge bg-success mr-3"> Normal : </span> &nbsp;&nbsp;Between 18 - 25
+                        </h3>
+                      </div>
+                     
+                      <div class="row">
+                        <h3>
+                            <span class="badge bg-warning mr-3"> Overweight : </span>&nbsp; &nbsp;Between 25 - 30
+                        </h3>
+                      </div>
+                      <div class="row">
+                        <h3>
+                            <span class="badge bg-danger mr-3"> Obesity : </span>&nbsp; &nbsp;Greater than 30
+                        </h3>
+                      </div>
+                      
+                    
+
+                  </div>
+              </mat-card-content>
+          </div>
+      </div>
+  </div>
+</div>

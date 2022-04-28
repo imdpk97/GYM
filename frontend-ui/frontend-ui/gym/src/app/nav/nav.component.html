@@ -1,0 +1,115 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+      <mat-toolbar>Menu</mat-toolbar>
+      <mat-nav-list>
+          <mat-list-item (click)="showComponent(1)">
+              <a matLine><i class="fas fa-chart-line mr-1"></i> Dashboard</a>
+          </mat-list-item>
+
+          <mat-list-item (click)="showComponent(2)">
+              <a matLine><i class="fas fa-user  mr-1  "></i> Members</a>
+          </mat-list-item>
+
+          <mat-list-item (click)="showComponent(3)">
+              <a matLine><i class="fas fa-list  mr-1  "></i> Plans</a>
+          </mat-list-item>
+
+          <mat-list-item (click)="showComponent(4)">
+              <a matLine><i class="fas fa-list mr-1"></i>Activity</a>
+          </mat-list-item>
+
+          <mat-list-item (click)="showComponent(5)">
+              <a matLine><i class="fas fa-list mr-1"></i>Diet Plan</a>
+          </mat-list-item>
+
+          <mat-list-item (click)="showComponent(6)">
+              <a matLine><i class="fas fa-calculator   mr-1 "></i> BMI Calculator</a>
+          </mat-list-item>
+
+
+          <mat-list-item>
+              <a matLine><button type="button" class="btn btn-info" (click)="onLogout()"><i class="fas fa-sign-out-alt   mr-1 "></i> Logout</button> </a>
+          </mat-list-item>
+      </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+      <mat-toolbar color="primary">
+          <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" *ngIf="isHandset$ | async">
+         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+          </button>
+          <span>GYM</span>
+
+      </mat-toolbar>
+      <router-outlet></router-outlet>
+
+      <div id="root" *ngIf="dashboard">
+        <div class="container pt-5">
+            <div class="row align-items-stretch">
+                <div class="c-dashboardInfo  col-md-6">
+                    <div class="wrap">
+                        <h4 class="heading heading5 hind-font medium-font-weight c-dashboardInfo__title"> Members<svg class="MuiSvgIcon-root-19" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation">
+        <path fill="none" d="M0 0h24v24H0z"></path>
+        <path
+          d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z">
+        </path>
+      </svg></h4><span class="hind-font caption-12 c-dashboardInfo__count">{{MemberCount}}</span>
+                    </div>
+                </div>
+                <div class="c-dashboardInfo  col-md-6">
+                    <div class="wrap">
+                        <h4 class="heading heading5 hind-font medium-font-weight c-dashboardInfo__title">Current Plans<svg class="MuiSvgIcon-root-19" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation">
+        <path fill="none" d="M0 0h24v24H0z"></path>
+        <path
+          d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z">
+        </path>
+      </svg></h4><span class="hind-font caption-12 c-dashboardInfo__count"> {{GymPlanCount}}</span>
+                    </div>
+                </div>
+                <div class="c-dashboardInfo col-md-6">
+                    <div class="wrap">
+                        <h4 class="heading heading5 hind-font medium-font-weight c-dashboardInfo__title"> Activity<svg class="MuiSvgIcon-root-19" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation">
+        <path fill="none" d="M0 0h24v24H0z"></path>
+        <path
+          d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z">
+        </path>
+      </svg></h4><span class="hind-font caption-12 c-dashboardInfo__count">{{ActivityCount}}</span>
+                    </div>
+                </div>
+                <div class="c-dashboardInfo col-md-6">
+                    <div class="wrap">
+                        <h4 class="heading heading5 hind-font medium-font-weight c-dashboardInfo__title">Diet Plans<svg class="MuiSvgIcon-root-19" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation">
+        <path fill="none" d="M0 0h24v24H0z"></path>
+        <path
+          d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z">
+        </path>
+      </svg></h4><span class="hind-font caption-12 c-dashboardInfo__count">{{DietPlanCount}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+      <div class="container">
+
+          <div class="row my-3" id="members">
+              <app-grid *ngIf="members"></app-grid>
+          </div>
+          <div class="row my-3" id="plans">
+              <app-gym-plan *ngIf="plans"></app-gym-plan>
+          </div>
+
+          <div class="row my-3" id="activity">
+                <app-activity-grid *ngIf="activity"></app-activity-grid>
+          </div>
+
+          <div class="row my-3" id="diet">
+              <app-diet-plan *ngIf="diet"></app-diet-plan>
+          </div>
+          
+          <div class="row my-3" id="bmi-calculator">
+            <app-bmi-calculator *ngIf="bmi"></app-bmi-calculator>
+        </div>
+      </div>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

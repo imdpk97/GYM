@@ -1,0 +1,95 @@
+
+
+<div class="container-fluid">
+  <div class="row my-3">
+      <div class="card col-md-12">
+          <form [formGroup]="RegistrationDetails" (ngSubmit)="[userRegister(),closeMe()]">
+
+              <div class="card-body text-center">
+                  <mat-card-header>
+                      <mat-card-title>
+                          <h3>Add New Member</h3>
+                      </mat-card-title>
+                  </mat-card-header>
+                  <mat-card-content class="row">
+                      <div class="col-md-4">
+                          <mat-form-field>
+                              <mat-label>Name</mat-label>
+                              <input matInput type="text" [(ngModel)]="user.name" formControlName="name" />
+                              <mat-error>Name is required and it should be of minimum length 6</mat-error>
+                          </mat-form-field>
+                      </div>
+                      <div class="col-md-4">
+                          <mat-form-field>
+                              <mat-label>Email</mat-label>
+                              <input matInput type="email" [(ngModel)]="user.email" formControlName="email" />
+                              <mat-error>Email is required</mat-error>
+                          </mat-form-field>
+                      </div>
+                      <div class="col-md-4">
+                          <mat-form-field>
+                              <mat-label>Contact</mat-label>
+                              <input matInput type="text" [(ngModel)]="user.contact" formControlName="contact" />
+                              <mat-error>Contact is required and it should contain 10 digits</mat-error>
+                          </mat-form-field>
+                      </div>
+                      <div class="col-md-4">
+                          <mat-form-field>
+                              <mat-label>Height</mat-label>
+                              <input matInput type="text" [(ngModel)]="user.height" formControlName="height" />
+                              <mat-error>Height is required and it should be in form 6'3"</mat-error>
+                          </mat-form-field>
+                      </div>
+                      <div class="col-md-4">
+                          <mat-form-field>
+                              <mat-label>Weight</mat-label>
+                              <input matInput type="text" [(ngModel)]="user.weight" formControlName="weight" />
+                              <mat-error>Weight is required and it should be in form 98lb</mat-error>
+                          </mat-form-field>
+                      </div>
+                      <div class="col-md-4">
+                          <mat-form-field>
+                              <mat-label>Age</mat-label>
+                              <input matInput type="text" [(ngModel)]="user.age" formControlName="age" />
+                              <mat-error>Age is required and it should be in between 1 to 100</mat-error>
+                          </mat-form-field>
+                      </div>
+                      <div class="col-md-4">
+                          <mat-form-field>
+                              <mat-label>Joining Date</mat-label>
+                              <input matInput type="date" [(ngModel)]="user.joiningDate"  
+                              formControlName="joiningDate" />
+                              <mat-error>Joining Date is required</mat-error>
+                          </mat-form-field>
+                      </div> 
+                      <div class="col-md-4">                       
+                        <mat-form-field >
+                            <mat-label>Plans</mat-label>
+                            <mat-select [(value)]="selectedValue" [(ngModel)]="selectedValue" formControlName="plan" [(ngModel)]="user.plan">
+                            <mat-option  *ngFor="let item of plans" [value]="item.name" >
+                            {{item.name}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                      </div>
+                  </mat-card-content>
+                  <div class="col-12 my-2">
+                      <button type="submit" class="btn btn-success" [disabled]="!RegistrationDetails.valid">Submit</button>
+                      <button mat-dialog-close tabindex="-1" class="btn btn-danger">Cancel</button>
+
+                  </div>
+
+              </div>
+          </form>
+      </div>
+
+  </div>
+
+</div>
+
+
+
+
+
+
+  

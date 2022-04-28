@@ -1,0 +1,56 @@
+<div class="container-fluid">
+    <div class="row my-3">
+        <div class="card col-md-12">
+            <form [formGroup]="DietPlan" (ngSubmit)="[submitData(),closeMe()]">  
+                <div class="card-body text-center">
+                    <mat-card-header>
+                        <mat-card-title>
+                            <h3>Add Diet Plan</h3>
+                        </mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content class="row">
+                        <div class="col-md-4">
+                            <mat-form-field>
+                                <mat-label>Name</mat-label>
+                                <input matInput type="text" [(ngModel)]="diet.name" formControlName="name"/>
+                                <mat-error>Name is required</mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-4">
+                            <mat-form-field>
+                                <mat-label>Calories</mat-label>
+                                <input matInput type="text" [(ngModel)]="diet.calories" formControlName="calories" />
+                                <mat-error>calories is required</mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-4">
+                            <mat-form-field>
+                                <mat-label>Bmi From</mat-label>
+                                <input matInput type="text" [(ngModel)]="diet.bmiFrom" formControlName="bmiFrom" />
+                                <mat-error>Bmi From is required</mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-4">
+                            <mat-form-field>
+                                <mat-label>Bmi To</mat-label>
+                                <input matInput type="text" [(ngModel)]="diet.bmiTo" formControlName="bmiTo" />
+                                <mat-error>bmi To is required</mat-error>
+                            </mat-form-field>
+                        </div>
+                    </mat-card-content>
+                    <div class="col-12 my-2">
+                        <button type="submit" class="btn btn-success">Submit</button>
+                        <button mat-dialog-close tabindex="-1" class="btn btn-danger">Cancel</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+  </div>
+  
+  
+  
+  
+  
+  
+    

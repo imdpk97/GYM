@@ -1,0 +1,39 @@
+<!-- <app-register-user *ngIf="newMember"></app-register-user> -->
+
+<div class="container">
+    <div class="card">
+      <div class="card-body">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h2 class="text-left">Gym Plan</h2>
+  
+            <button
+              (click)="addPlan()"
+              type="button"
+              class="btn btn-success btn-sm text-light mb-2"
+            >
+              <i class="fa fa-plus-circle" aria-hidden="true"></i> Add Plan
+            </button>
+          </div>
+          <div class="panel-body">
+            <ag-grid-angular
+              class="ag-theme-alpine"
+              [rowData]="rowData"
+              [columnDefs]="columnDefs"
+              (gridReady)="onGridReady($event)"
+              rowSelection="single"
+              (rowClicked)="getSelectedRowData()"
+              [pagination]="true"
+            >
+            </ag-grid-angular>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+
+
+
+

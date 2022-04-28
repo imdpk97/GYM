@@ -1,0 +1,50 @@
+
+
+<div class="container-fluid">
+    <div class="row my-3">
+        <div class="card col-md-12">
+            <form [formGroup]="Activity" (ngSubmit)="[submitData(),closeMe()]">
+  
+                <div class="card-body text-center">
+                    <mat-card-header>
+                        <mat-card-title>
+                            <h3>Add New Activity</h3>
+                        </mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content class="row">
+                        <div class="col-md-4">
+                            <mat-form-field>
+                                <mat-label>Day</mat-label>
+                                <input matInput type="text" [(ngModel)]="activity.day" formControlName="day" />
+                                <mat-error>Day is required</mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-4">
+                            <mat-form-field>
+                                <mat-label>Workout</mat-label>
+                                <input matInput type="text" [(ngModel)]="activity.workout" formControlName="workout" />
+                                <mat-error>workout is required</mat-error>
+                            </mat-form-field>
+                        </div>
+                    </mat-card-content>
+                    <div class="col-12 my-2">
+                        <button type="submit" class="btn btn-success">Submit</button>
+  
+                        <button mat-dialog-close tabindex="-1" class="btn btn-danger">Cancel</button>
+  
+                    </div>
+  
+                </div>
+            </form>
+        </div>
+  
+    </div>
+  
+  </div>
+  
+  
+  
+  
+  
+  
+    

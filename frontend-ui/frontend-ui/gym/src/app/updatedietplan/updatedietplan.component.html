@@ -1,0 +1,93 @@
+<div class="container-fluid">
+    <div class="row my-3">
+        <div class="card col-md-12">
+            <form [formGroup]="updateDietDetails" (ngSubmit)="[updateData(updateDietDetails.value),closeMe()]">
+  
+                <div class="card-body text-center">
+                    <mat-card-header>
+                        <mat-card-title>
+                            <h3>Update Diet</h3>
+                        </mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content class="row">
+                        <div class="col-md-4">
+                            <mat-form-field>
+                                <input type="hidden"  [(ngModel)]="row.id" value="{{row.id}}" formControlName="id">
+                                <mat-label>Name</mat-label>
+                                <input matInput type="text"  value="{{row.name}}"  [(ngModel)]="row.name" formControlName="name"/>
+                                <mat-error>Name is required and it should be of minimum length 6</mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-4">
+                            <mat-form-field>
+                                <mat-label>Calories</mat-label>
+                                <input matInput type="email" value="{{row.calories}}"  [(ngModel)]="row.calories" formControlName="calories" readonly/>
+                                <mat-error>Calories is required</mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-4">
+                            <mat-form-field>
+                                <mat-label>Bmi From </mat-label>
+                                <input matInput type="text"  value="{{row.height}}" [(ngModel)]="row.bmiFrom" formControlName="bmiFrom"/>
+                                <mat-error>Height is required and it should be in form 6'3"</mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-4">
+                            <mat-form-field>
+                                <mat-label>Bmi To</mat-label>
+                                <input matInput type="text"  value="{{row.bmiTo}}" [(ngModel)]="row.bmiTo" formControlName="bmiTo"/>
+                                <mat-error>Contact is required and it should contain 10 digits</mat-error>
+                            </mat-form-field>
+                        </div>
+                        
+                     </mat-card-content>
+                    <div class="col-12 my-2">
+                        <button type="submit" class="btn btn-success">Update</button>
+  
+                        <button mat-dialog-close tabindex="-1" class="btn btn-danger">Cancel</button>
+  
+  
+                    </div>
+  
+                </div>
+            </form>
+        </div>
+  
+    </div>
+  
+  </div>
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    
